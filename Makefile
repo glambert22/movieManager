@@ -6,7 +6,7 @@ APP_VERSION=$(shell xmllint --xpath "//*[local-name()='project']/*[local-name()=
 
 APP_NAME=movie-manager
 JAR_FILE=target/$(APP_NAME)-$(APP_VERSION).jar
-TAG?=$(APP_NAME):$(APP_VERSION)
+TAG=$(APP_NAME)\:$(APP_VERSION)
 
 JAVA_11_INSTALLED=$(shell java -version 2>&1|grep 11.*.* >/dev/null; printf $$?)
 MVN_DOCKER=docker run --rm\
