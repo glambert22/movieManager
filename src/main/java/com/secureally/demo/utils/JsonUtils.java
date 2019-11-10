@@ -2,7 +2,6 @@ package com.secureally.demo.utils;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.MissingNode;
 import org.javers.core.Javers;
 import org.javers.core.JaversBuilder;
@@ -24,7 +23,7 @@ public class JsonUtils {
         JsonNode deltaNode = MissingNode.getInstance();
         if (diff.hasChanges()) {
             List<ValueChange> valueChanges = diff.getChangesByType(ValueChange.class);
-            ArrayNode changeArrayNode = valueChanges.stream()
+            deltaNode = valueChanges.stream()
                     .filter(v -> v.getPropertyName() != "method")
                     .map(j -> {
                         JsonNode delta = MAPPER.createObjectNode()
@@ -33,7 +32,6 @@ public class JsonUtils {
                         return MAPPER.createObjectNode().set(j.getPropertyName(), delta);
                     })
                     .collect(new ArrayNodeCollector());
-            deltaNode = changeArrayNode;
         }
         return deltaNode;
     }
