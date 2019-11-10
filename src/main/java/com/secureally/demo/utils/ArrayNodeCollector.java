@@ -11,7 +11,7 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.stream.Collector;
 
-public class ArrayNodeCollector<T> implements Collector<T, A, J> {
+public class ArrayNodeCollector implements Collector<JsonNode, ArrayNode, ArrayNode> {
 
     private static final ObjectMapper MAPPER = new ObjectMapper();
 
@@ -22,7 +22,7 @@ public class ArrayNodeCollector<T> implements Collector<T, A, J> {
      * @return a function which returns a new, mutable result container
      */
     @Override
-    public Supplier<A> supplier() {
+    public Supplier<ArrayNode> supplier() {
         return MAPPER::createArrayNode;
     }
 
@@ -32,7 +32,7 @@ public class ArrayNodeCollector<T> implements Collector<T, A, J> {
      * @return a function which folds a value into a mutable result container
      */
     @Override
-    public BiConsumer<ArrayNode<T>, T> accumulator() {
+    public BiConsumer<ArrayNode, JsonNode> accumulator() {
         return ArrayNode::add;
     }
 
