@@ -1,0 +1,46 @@
+{
+  "LIST" : {
+    "data": {
+      "entities": [
+        {
+          "id": 2,
+          "name": "The Dark Knight",
+          "genre": "Action & Adventure, Drama, Science Fiction & Fantasy",
+          "yearReleased": 2008,
+          "rating": 94.2
+        },
+        {
+          "id": 1,
+          "name": "Avengers: Endgame",
+          "genre": "Action & Adventure, Drama, Science Fiction & Fantasy",
+          "yearReleased": 2019,
+          "rating": 94.9
+        },
+        {
+          "id": 3,
+          "name": "Avatar",
+          "genre": "Action & Adventure, Comedy, Mystery & Suspense, Science Fiction & Fantasy",
+          "yearReleased": 2009,
+          "rating": 94.0
+        }
+      ]
+    },
+    "_meta": {
+      "offset": 0,
+      "limit": 3,
+      "totalPages": 1,
+      "numberOfElements": 3,
+      "totalElements": 1,
+      "previousPage": false,
+      "first": true,
+      "nextPage": false,
+      "lastPage": true
+    }
+  },
+  "CREATE" : {
+    "name" : "The Crying Game",
+    "genre" : "Drama, Mystery & Suspense, Romance",
+    "yearReleased" : 1992,
+    "rating" : 94.9
+  }
+}
