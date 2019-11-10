@@ -39,6 +39,7 @@ After completing these steps, you will have your system setup for development.
     It will default to running everything locally via port 9001.
     ```bash
     $ make docker/build
+   $ make docker/run
    ```
    
  **Running on local machine**
