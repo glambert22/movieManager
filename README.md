@@ -1,6 +1,14 @@
 # movieManager
 A RESTful API application that manages a personal movie collection
 
+## Attention:
+Jackson v 2.9.7 has a vulnerability referenced in the following CVE:
+
+CVE-2019-16942 - https://github.com/advisories/GHSA-mx7p-6679-8g3q
+
+Going to v 2.10.1 breaks the ArrayNodeCollector implementation used and would 
+require more time to investigate that is allowed for this ask. 
+
 ## Setting up your system
 After completing these steps, you will have your system setup for development.
 
