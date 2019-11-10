@@ -62,9 +62,7 @@ The requirement here is to have a production ready API. Production is a bit ambi
 to get done in two days.  With that said I feel this implementation while
 there are some bugs it can stand up to some amount of rigor. 
 
-The API does not have security or and throttling/backpressure technology. As well
-as the `docker/run` make command has issue with make because of the presence of
-a `:`.  The tests can do with more break testing as well. However I wanted to 
+The API does not have security or and throttling/backpressure technology. However I wanted to 
 honor the request for production ready code and focus most of my time making this 
 solution as solid as possible.  
 

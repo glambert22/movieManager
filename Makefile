@@ -66,9 +66,8 @@ install: ## Install artifact to local repository
 docker/build: build ## Build Docker image
 	docker build --build-arg JAR_FILE=$(JAR_FILE) -t $(APP_NAME) .
 
-docker/build-nc: ## Build the container without caching
-    docker build --build-arg JAR_FILE=$(JAR_FILE) --no-cache -t $(APP_NAME) .
+docker/build-nc: build ## Build the container without caching
+	docker build --build-arg JAR_FILE=$(JAR_FILE) --no-cache -t $(APP_NAME) .
 
 docker/run: ## Run the application in tagged container
-    docker run -d -p9001:9001 -t $(APP_NAME)
-
+	docker run -d -p9001:9001 -t $(APP_NAME)
